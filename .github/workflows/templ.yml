@@ -20,7 +20,7 @@ jobs:
       - name: get
         uses: cardinalby/export-env-action@v2
         with:
-          envFile: 'constants.env'    
+          envFile: 'otherepo.env'    
           expand: 'true' 
 
 
