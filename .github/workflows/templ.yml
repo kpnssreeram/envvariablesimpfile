@@ -7,6 +7,9 @@ jobs:
   testiub:
     runs-on: ubuntu-latest
     steps:
+    - name: checkout
+    - uses: actions/checkout@v4
+
     - name: import
     - uses: cardinalby/export-env-action@v2
       with:
