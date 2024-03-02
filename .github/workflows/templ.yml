@@ -28,7 +28,6 @@ jobs:
 
       - name: Print
         run: |
-             ls
              echo "${{ env.name }}"
 
 
