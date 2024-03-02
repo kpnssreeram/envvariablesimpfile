@@ -33,7 +33,7 @@ jobs:
     
       - name: Print
         run: |
-             ls
+             cat otherepo.env
              echo "${{env.name}}"
 
 
