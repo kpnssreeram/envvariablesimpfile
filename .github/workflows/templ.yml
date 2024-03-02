@@ -21,7 +21,6 @@ jobs:
         uses: cardinalby/export-env-action@v2
         with:
           envFile: 'otherepo.env'
-          expand: 'true'
           mask: 'true'
 
       - name: Print
