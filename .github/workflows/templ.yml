@@ -29,4 +29,5 @@ jobs:
     
       - name: Print
         run: |
+            cat otherepo.env
              echo "${{env.name}}"
