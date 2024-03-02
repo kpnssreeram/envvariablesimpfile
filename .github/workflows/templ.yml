@@ -2,22 +2,21 @@ name: env parent file
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
   testiub:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
-    - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: import
-    - uses: cardinalby/export-env-action@v2
-      with:
-        envFile: 'constants.env'    
-        expand: 'true'
-    - name: print
-      run: echo ${{env.name}}
-# env.PROTOCOL == 'https'
-# env.HOST == 'example.com'
-# env.PORT == '8080'
-# env.URI == 'https://example.com:8080'
+      - name: Import
+        uses: cardinalby/export-env-action@v2
+        with:
+          envFile: 'constants.env'
+          expand: 'true'
+
+      - name: Print
+        run: echo "${{ env.name }}"
