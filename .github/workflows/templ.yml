@@ -24,7 +24,8 @@ jobs:
           expand: 'true'
 
       - name: Print
-        run: ls
+        run: |
+             ls
              echo "${{ env.name }}"
 
 
