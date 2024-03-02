@@ -20,8 +20,11 @@ jobs:
       - name: impenvfile
         uses: cardinalby/export-env-action@v2
         with:
-          envFile: 'otherepo.env'
-          mask: 'true'
+          envFile: otherepo.env
+          mask: true
+          expand: true
+          expandWithJobEnv: true
+          export: true
 
       - name: Print
         run: |
