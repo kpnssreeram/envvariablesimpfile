@@ -23,7 +23,6 @@ jobs:
         run: |
              ls
              pwd
-             echo "${{env.name}}"
         
       - name: impenvfile
         uses: cardinalby/export-env-action@v2
@@ -33,7 +32,7 @@ jobs:
     
       - name: Print
         run: |
-             cat otherepo.env
+             cat constants.env
              echo "${{env.name}}"
 
 
