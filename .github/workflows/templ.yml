@@ -15,9 +15,15 @@ jobs:
       - name: Import
         run: |
           curl -H "Authorization: token ${{secrets.TOKEN}}" -L -o otherepo.env https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
+
+          
       - name: get
       - uses: cardinalby/export-env-action@v2
         with:
-          envFile: 'otherepo.env' 
+          envFile: 'constants.env'    
+          expand: 'true' 
+
+
+          
       - name: Print
         run: echo ${{env.name}}
