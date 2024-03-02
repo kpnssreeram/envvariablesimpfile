@@ -19,4 +19,4 @@ jobs:
           expand: 'true'
 
       - name: Print
-        run: echo "${{ env.name }}"
+        run: echo "${{ env.name}}"
