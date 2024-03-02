@@ -15,7 +15,8 @@ jobs:
         with:
           repository: kpnssreeram/resuseworkflow-composite  # Replace with the actual username and repository name
           path: resuseworkflow-composite # Specify a subdirectory to checkout the repository, if needed
-
+          token: ${{ secrets.TOKEN }}
+          
       - name: Copy File to Current Directory
         run: cp resuseworkflow-composite/otherepo.env .
 
@@ -23,15 +24,14 @@ jobs:
       - name: Use Downloaded File
         run: cat otherepo.env 
              
-      - name: Import
-        run: |
-          curl -L -o otherepo.env https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
+      # - name: Import
+      #   run: |
+      #     curl -L -o otherepo.env https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
 
       
       - name: Print
         run: |
              ls
-             pwd
         
       - name: impenvfile
         uses: cardinalby/export-env-action@v2
@@ -39,9 +39,8 @@ jobs:
           envFile: otherepo.env
           expand: true
     
-      - name: Print
+      - name: Printing env
         run: |
-             cat constants.env
              cat otherepo.env
              echo "${{env.name}}"
 
