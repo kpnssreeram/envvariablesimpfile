@@ -18,7 +18,7 @@ jobs:
 
           
       - name: get
-      - uses: cardinalby/export-env-action@v2
+        uses: cardinalby/export-env-action@v2
         with:
           envFile: 'constants.env'    
           expand: 'true' 
