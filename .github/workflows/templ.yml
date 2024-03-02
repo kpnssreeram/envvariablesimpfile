@@ -12,9 +12,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
   
-      - name: Import 
+      - name: Import
         run: |
-          curl -H "Authorization: token ${{secrets.TOKEN}}" https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
-        
+          curl -H "Authorization: token ${{secrets.TOKEN}}" -L -o otherepo.env https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
+              
       - name: Print
         run: echo "${{ env.name }}"
