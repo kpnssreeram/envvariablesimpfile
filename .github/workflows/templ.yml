@@ -10,24 +10,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       
-      - name: Git Checkout 
+      - name: Checkout Another Repo
         uses: actions/checkout@v4
-      
-      - name: Import
-        run: |
-          curl -H "Authorization: token ${{secrets.TOKEN}}" -L -o otherepo.env https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
-      
+        with:
+          repository: kpnssreeram/resuseworkflow-composite 
+          path: resuseworkflow-composite 
+          token: ${{ secrets.TOKEN }}
+          
+      - name: Copy File 
+        run: cp resuseworkflow-composite/hello.env .
+
+     
+      - name: Downloaded File
+        run: cat hello.env 
+             
+      # - name: Import
+      #   run: |
+      #     curl -L -o otherepo.env https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
+        
       - name: Print
         run: |
              ls
         
-      - name: impenvfile
+      - name: Import
         uses: cardinalby/export-env-action@v2
         with:
-          envFile: otherepo.env
-          expand: true
+          envFile: 'hello.env'
+          expand: 'true'
     
-      - name: Print
-        run: |
-            cat otherepo.env
-             echo "${{env.name}}"
+      - name: Printing env
+        run: echo "${{ env.name }}"
