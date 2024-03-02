@@ -22,6 +22,7 @@ jobs:
         with:
           envFile: 'otherepo.env'
           expand: 'true'
+          mask: 'true'
 
       - name: Print
         run: |
