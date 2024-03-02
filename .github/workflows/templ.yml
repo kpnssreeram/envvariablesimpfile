@@ -28,7 +28,9 @@ jobs:
       #   run: |
       #     curl -L -o otherepo.env https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
 
-      
+      - name: Checkout this Repo
+        uses: actions/checkout@v4
+        
       - name: Print
         run: |
              ls
