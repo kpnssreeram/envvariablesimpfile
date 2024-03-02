@@ -1,0 +1,20 @@
+name: env parent file
+
+on:
+  push:
+
+jobs:
+  testiub:
+    runs-on: ubuntu-latest
+    steps:
+    - name: import
+    - uses: cardinalby/export-env-action@v2
+      with:
+        envFile: 'constants.env'    
+        expand: 'true'
+    - name: print
+      run: echo ${{env.name}}
+# env.PROTOCOL == 'https'
+# env.HOST == 'example.com'
+# env.PORT == '8080'
+# env.URI == 'https://example.com:8080'
