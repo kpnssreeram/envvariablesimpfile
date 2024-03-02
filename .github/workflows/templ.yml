@@ -36,7 +36,7 @@ jobs:
       - name: impenvfile
         uses: cardinalby/export-env-action@v2
         with:
-          envFile: hello.env
+          envFile: constants.env
           expand: true
     
       - name: Printing env
