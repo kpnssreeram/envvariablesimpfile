@@ -13,15 +13,15 @@ jobs:
       - name: Checkout Another Repo
         uses: actions/checkout@v4
         with:
-          repository: kpnssreeram/resuseworkflow-composite  # Replace with the actual username and repository name
-          path: resuseworkflow-composite # Specify a subdirectory to checkout the repository, if needed
+          repository: kpnssreeram/resuseworkflow-composite 
+          path: resuseworkflow-composite 
           token: ${{ secrets.TOKEN }}
           
-      - name: Copy File to Current Directory
+      - name: Copy File 
         run: cp resuseworkflow-composite/otherepo.env .
 
-      # Continue with the rest of your workflow using the downloaded file
-      - name: Use Downloaded File
+     
+      - name: Downloaded File
         run: cat otherepo.env 
              
       # - name: Import
