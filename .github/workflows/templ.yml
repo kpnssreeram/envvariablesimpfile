@@ -10,19 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       
-      - name: Checkout Another Repo
-        uses: actions/checkout@v4
-        with:
-          repository: kpnssreeram/resuseworkflow-composite 
-          path: resuseworkflow-composite 
-          token: ${{ secrets.TOKEN }}
+      # - name: Checkout Another Repo
+      #   uses: actions/checkout@v4
+      #   with:
+      #     repository: kpnssreeram/resuseworkflow-composite 
+      #     path: resuseworkflow-composite 
+      #     token: ${{ secrets.TOKEN }}
           
-      - name: Copy File 
-        run: cp resuseworkflow-composite/hello.env .
+      # - name: Copy File 
+      #   run: cp resuseworkflow-composite/hello.env .
 
      
-      - name: Downloaded File
-        run: cat hello.env 
+      # - name: Downloaded File
+      #   run: cat hello.env 
              
       # - name: Import
       #   run: |
