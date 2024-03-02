@@ -17,6 +17,11 @@ jobs:
 
       - name: Git Checkout 
         uses: actions/checkout@v4
+      - name: Print
+        run: |
+             ls
+             echo "${{env.name}}"
+
         
       - name: impenvfile
         uses: cardinalby/export-env-action@v2
