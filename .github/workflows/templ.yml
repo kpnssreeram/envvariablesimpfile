@@ -18,11 +18,11 @@ jobs:
           token: ${{ secrets.TOKEN }}
           
       - name: Copy File 
-        run: cp resuseworkflow-composite/otherepo.env .
+        run: cp resuseworkflow-composite/hello.env .
 
      
       - name: Downloaded File
-        run: cat otherepo.env 
+        run: cat hello.env 
              
       # - name: Import
       #   run: |
@@ -36,12 +36,11 @@ jobs:
       - name: impenvfile
         uses: cardinalby/export-env-action@v2
         with:
-          envFile: otherepo.env
+          envFile: hello.env
           expand: true
     
       - name: Printing env
         run: |
-             cat otherepo.env
              echo "${{env.name}}"
 
 
