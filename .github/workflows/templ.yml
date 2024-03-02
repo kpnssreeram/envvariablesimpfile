@@ -10,18 +10,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       
-        
+      - name: Git Checkout 
+        uses: actions/checkout@v4
+      
+             
       - name: Import
         run: |
           curl -H "Authorization: token ${{secrets.TOKEN}}" -L -o otherepo.env https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
 
-      - name: Git Checkout 
-        uses: actions/checkout@v4
+      
       - name: Print
         run: |
              ls
+             pwd
              echo "${{env.name}}"
-
         
       - name: impenvfile
         uses: cardinalby/export-env-action@v2
