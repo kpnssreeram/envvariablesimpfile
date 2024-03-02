@@ -21,7 +21,6 @@ jobs:
         uses: cardinalby/export-env-action@v2
         with:
           envFile: constants.env
-          mask: true
           expand: true
           expandWithJobEnv: true
           export: true
