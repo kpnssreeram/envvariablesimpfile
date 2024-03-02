@@ -35,15 +35,14 @@ jobs:
         run: |
              ls
         
-      - name: impenvfile
+      - name: Import
         uses: cardinalby/export-env-action@v2
         with:
-          envFile: constants.env
-          expand: true
+          envFile: 'constants.env'
+          expand: 'true'
     
       - name: Printing env
-        run: |
-             echo "${{env.name}}"
+        run: echo "${{ env.name }}"
 
 
           
