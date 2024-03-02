@@ -9,14 +9,24 @@ jobs:
   testiub:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      
+      - name: Git Checkout 
         uses: actions/checkout@v4
-
+      
       - name: Import
+        run: |
+          curl -H "Authorization: token ${{secrets.TOKEN}}" -L -o otherepo.env https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
+      
+      - name: Print
+        run: |
+             ls
+        
+      - name: impenvfile
         uses: cardinalby/export-env-action@v2
         with:
-          envFile: 'constants.env'
-          expand: 'true'
-
+          envFile: otherepo.env
+          expand: true
+    
       - name: Print
-        run: echo "${{ env.PROTOCOL}}"
+        run: |
+             echo "${{env.name}}"
