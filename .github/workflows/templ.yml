@@ -18,7 +18,7 @@ jobs:
 
           
       - name: impenvfile
-        uses: cardinalby/export-env-action@v2
+        uses: cardinalby/export-env-action@v1
         with:
           envFile: constants.env
           expand: true
@@ -27,7 +27,7 @@ jobs:
 
       - name: Print
         run: |
-             echo "${{ env.name }}"
+             echo "${{env.name}}"
 
 
           
