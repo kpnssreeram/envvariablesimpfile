@@ -15,7 +15,7 @@ jobs:
       - name: Import
         uses: cardinalby/export-env-action@v2
         with:
-          envFile: 'kpnssreeram/resuseworkflow-composite/otherepo.env@main'
+          envFile: 'kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env'
           expand: 'true'
 
       - name: Print
