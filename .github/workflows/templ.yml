@@ -11,12 +11,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Import
-        uses: cardinalby/export-env-action@v2
-        with:
-          envFile: 'https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env'
-          expand: 'true'
-
+  
+      - name: Import 
+        run: |
+          curl -H "Authorization: token ${secrets.TOKEN}" https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
+        
       - name: Print
         run: echo "${{ env.name }}"
