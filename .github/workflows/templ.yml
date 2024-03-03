@@ -32,9 +32,9 @@ jobs:
              
       - name: Import
         run: |
-           curl -LJO https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/hello.env
+            wget https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
           # curl -L -o otherepo.env https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
-    
+     
       - name: Print
         run: |
              ls
