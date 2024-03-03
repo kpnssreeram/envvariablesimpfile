@@ -49,10 +49,9 @@ jobs:
           expand: 'true'
     
       - name: Printing env
-      
         run: |
               cat hello.env
-             echo "${{ env.name }}"
+               echo "${{ env.name }}"
         
   thisrepo:
       runs-on: ubuntu-latest
