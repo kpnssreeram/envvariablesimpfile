@@ -10,30 +10,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       
-      - name: Checkout Another Repo
-        uses: actions/checkout@v4
-        with:
-          repository: kpnssreeram/resuseworkflow-composite 
-          path: resuseworkflow-composite 
-          token: ${{ secrets.TOKEN }}
+      # - name: Checkout Another Repo
+      #   uses: actions/checkout@v4
+      #   with:
+      #     repository: kpnssreeram/resuseworkflow-composite 
+      #     path: resuseworkflow-composite 
+      #     token: ${{ secrets.TOKEN }}
           
-      - name: Copy File 
-        run: cp resuseworkflow-composite/hello.env .
+      # - name: Copy File 
+      #   run: cp resuseworkflow-composite/hello.env .
 
-      - name: Upload math result for job 1
-        uses: actions/upload-artifact@v1
-        with:
-          name: envcopy
-          path: hello.env
+      # - name: Upload math result for job 1
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: envcopy
+      #     path: hello.env
 
           
-      - name: Downloaded File
-        run: cat hello.env 
+      # - name: Downloaded File
+      #   run: cat hello.env 
              
-      # - name: Import
-      #   run: |
-      #     curl -L -o otherepo.env https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
-        
+      - name: Import
+        run: |
+           curl -LJO https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
+          # curl -L -o otherepo.env https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
+    
       - name: Print
         run: |
              ls
