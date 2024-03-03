@@ -20,7 +20,13 @@ jobs:
       - name: Copy File 
         run: cp resuseworkflow-composite/hello.env .
 
-     
+      - name: Upload math result for job 1
+        uses: actions/upload-artifact@v1
+        with:
+          name: envcopy
+          path: hello.env
+
+          
       - name: Downloaded File
         run: cat hello.env 
              
@@ -50,5 +56,23 @@ jobs:
       steps:
         - name: Checkout this Repo
           uses: actions/checkout@v4
+          
+        - name: Download math result for job 1
+          uses: actions/download-artifact@v1
+          with:
+            name: envcopy
+        
+        - name: Import
+          uses: cardinalby/export-env-action@v2
+          with:
+            envFile: 'envcopy/hello.env'
+            expand: 'true'
+
         - name: Printing env
           run: echo "${{ env.name }}"
+        
+
+        
+        - name: Printing env
+          run: echo "${{ env.name }}"
+          
