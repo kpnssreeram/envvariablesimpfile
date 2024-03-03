@@ -43,3 +43,12 @@ jobs:
     
       - name: Printing env
         run: echo "${{ env.name }}"
+        
+  thisrepo:
+      runs-on: ubuntu-latest
+      needs: testiub
+      steps:
+        - name: Checkout this Repo
+          uses: actions/checkout@v4
+        - name: Printing env
+          run: echo "${{ env.name }}"
