@@ -31,6 +31,9 @@ jobs:
       - name: Print
         run: |
              ls
+             cd resuseworkflow-composite
+             ls
+
         
       - name: Import
         uses: cardinalby/export-env-action@v2
