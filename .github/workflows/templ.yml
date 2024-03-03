@@ -32,7 +32,7 @@ jobs:
              
       - name: Import
         run: |
-           curl -LJO https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
+           curl -LJO https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/hello.env
           # curl -L -o otherepo.env https://github.com/kpnssreeram/resuseworkflow-composite/blob/main/otherepo.env
     
       - name: Print
