@@ -38,7 +38,7 @@ jobs:
       - name: Print
         run: |
              ls
-             cd resuseworkflow-composite
+             # cd resuseworkflow-composite
              ls
 
         
