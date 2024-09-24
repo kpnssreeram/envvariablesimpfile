@@ -3,7 +3,7 @@ name: PagerDuty Incident Monitoring
 on:
   workflow_dispatch:
   schedule:
-      - cron: '*/6 * * * *'
+      - cron: '*/10 * * * *'
 
 jobs:
   monitor_incidents:
